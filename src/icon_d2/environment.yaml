@@ -1,0 +1,14 @@
+name: d2r
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python==3.10
+  - cdo
+  - numba
+  - numpy
+  - pip
+  - scipy
+  - xarray
+  - pip:
+    - pythermalcomfort

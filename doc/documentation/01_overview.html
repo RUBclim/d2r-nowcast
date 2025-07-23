@@ -1,0 +1,211 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>1. Overview &mdash; D2R Nowcasting Development v0.8.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=b5df399c"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="2. Install and Use" href="06_install_and_use.html" />
+    <link rel="prev" title="D2R Nowcasting Service Manual" href="../index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/d2r_logo_II.jpg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">1. Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduction">1.1. Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#what-is-the-problem-d2r-solves">1.2. What is the problem D2R solves?</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="06_install_and_use.html">2. Install and Use</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="06_install_and_use.html#setup">2.1. Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="06_install_and_use.html#structure">2.2. Structure</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Model</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="02_data_sources.html">1. Input Data</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="02_data_sources.html#data-describing-the-urban-form">1.1. Data Describing the Urban Form</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_data_sources.html#data-describing-the-weather-conditions">1.2. Data Describing the Weather Conditions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="02_data_sources.html#numerical-weather-predictions">1.2.1. Numerical Weather Predictions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="02_data_sources.html#in-situ-measurements">1.2.2. In-Situ Measurements</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="02_data_sources.html#file-organization">1.3. File organization</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="03_methods.html">2. Methods and Processes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="03_methods.html#processes">2.1. Processes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="03_methods.html#preprocessing">2.1.1. Preprocessing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="03_methods.html#alignment-of-weather-data">2.1.2. Alignment of Weather Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="03_methods.html#geostatistical-interpolation-module">2.1.3. Geostatistical Interpolation Module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="03_methods.html#design-of-the-interpolation-module">2.1.3.1. Design of the Interpolation Module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="03_methods.html#workflow-description">2.1.3.2. Workflow Description</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="03_methods.html#solweig-processing">2.1.4. SOLWEIG Processing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="03_methods.html#mosaicing-tiles">2.1.5. Mosaicing Tiles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="03_methods.html#calculating-thermal-comfort">2.1.6. Calculating Thermal Comfort</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="03_methods.html#api">2.2. API</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="04_output_format.html">3. Output Format</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="04_output_format.html#filenames">3.1. Filenames</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04_output_format.html#spatial-coverage">3.2. Spatial Coverage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04_output_format.html#spatial-resolution">3.3. Spatial Resolution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04_output_format.html#temporal-resolution-and-coverage">3.4. Temporal Resolution and Coverage</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Background</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="05_scientific_background.html">1. Scientific Background</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="05_scientific_background.html#thermal-comfort">1.1. Thermal Comfort</a></li>
+<li class="toctree-l2"><a class="reference internal" href="05_scientific_background.html#utci">1.2. UTCI</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="07_limitations.html">2. Limitations</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">D2R Nowcasting</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><span class="section-number">1. </span>Overview</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/documentation/01_overview.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="overview">
+<span id="id1"></span><h1><span class="section-number">1. </span>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h1>
+<section id="introduction">
+<span id="id2"></span><h2><span class="section-number">1.1. </span>Introduction<a class="headerlink" href="#introduction" title="Link to this heading"></a></h2>
+<p>The data-driven urban climate adaptation project Data2Resilience (D2R) implements data-driven actions and services to enhance Dortmund’s resilience to extreme heat.
+It deploys a state-of-the-art biometeorological sensor network and develops a nowcasting service for monitoring thermal comfort throughout the city.
+This real-time information aims to guide on-ground actions and services for smarter urban climate comfort planning,
+pioneering the integration of thermal comfort data within Dortmund’s smart city ecosystem.</p>
+<p>The nowcasting service provides real-time information about the weather and thermal comfort conditions in the city of Dortmund.
+This information is retrieved from the biometeorological weather stations and from Numerical Weather Predictions (NWP)
+from the ICON-D2 model, which is DWD’s regional numerical weather prediction model. The processing of the data is done in the backend
+of the service and includes the following processes: simulation of the radiation fluxes and the mean radiant temperature (MRT);
+geostatistical interpolation of the network data; and calculation of a thermal comfort index,
+namely the UTCI, at street level resolution.
+The service’s frontend provides an interactive webmap and relevant plots that present the thermal comfort in the city.
+An example of the UTCI data provided by D2R’s nowcasting service over Dortmund’s city center is given in <a class="reference internal" href="#utci-sample"><span class="std std-numref">Fig. 1.1</span></a>.</p>
+<p>The D2R nowcasting service is open source.
+At its core it uses the Urban Multi-scale Environmental Predictor (<a class="reference external" href="https://umep-docs.readthedocs.io/en/latest/" rel="noreferrer" target="_blank">UMEP</a>)
+climate service tool, which is designed for researchers and service providers (e.g. architects, climatologists, energy, health and urban planners),
+and in-house software developed by the <a class="reference external" href="https://www.geographie.ruhr-uni-bochum.de/klima/index.html.en" rel="noreferrer" target="_blank">Bochum Urban Climate Lab</a>.</p>
+<figure class="align-center" id="utci-sample">
+<a class="reference internal image-reference" href="../_images/01_doc_utci_example.png"><img alt="An example of the UTCI data provided by D2R’s nowcasting service over Dortmund’s city center for 2024-06-24 12:00 UTC." src="../_images/01_doc_utci_example.png" style="width: 328.40000000000003px; height: 229.60000000000002px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Fig. 1.1 </span><span class="caption-text">An example of the UTCI data provided by D2R’s nowcasting service over Dortmund’s city center for 2024-06-24 12:00 UTC.</span><a class="headerlink" href="#utci-sample" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="what-is-the-problem-d2r-solves">
+<span id="problem-d2r-solves"></span><h2><span class="section-number">1.2. </span>What is the problem D2R solves?<a class="headerlink" href="#what-is-the-problem-d2r-solves" title="Link to this heading"></a></h2>
+<p>Extreme heat endangers human health and well-being and impairs the use of public spaces.
+Dortmund’s Integrated Climate Adaptation Master Plan (<a class="reference external" href="https://www.dortmund.de/themen/umwelt-nachhaltigkeit-und-klimaschutz/klimaschutz-und-klimafolgenanpassung/klimafolgeanpassung/masterplan-integrierte-klimafolgenanpassung/" rel="noreferrer" target="_blank">MiKaDo</a>)
+puts a priority on actions and measures that improve heat resilience.
+D2R implemented data-driven actions and services to support officials
+from the City of Dortmund in improving the city’s resilience to extreme heat.
+We view D2R as a key step towards achieving the goal of climate-resilient and sustainable urban development that is set in MiKaDo.
+MiKaDo forms the basis for the implementation of local climate adaptation measures and recognizes extreme heat and thermal
+discomfort as major risks for the health and well-being of its citizens. It promotes the adoption of measures that protect
+climate-sensitive facilities (hospitals, nursing homes, etc.) from extreme temperatures and reduce the exposure of vulnerable groups.
+To achieve these objectives, spatially detailed data about the excess heat and thermal comfort—defined as the state-of-mind in which
+a person feels satisfied with the surrounding thermal environment (i.e., not too hot or too cold)—, across Dortmund are required,
+which are currently missing. The D2R project addresses this gap and provides the necessary spatial and meteorological data by
+co-deploying a state-of-the-art network of biometeorological weather stations designed to measure thermal comfort and a service that
+provides fine resolution nowcasts of thermal discomfort.
+More details can be found on the <a class="reference external" href="https://data2resilience.de/" rel="noreferrer" target="_blank">project website</a>.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../index.html" class="btn btn-neutral float-left" title="D2R Nowcasting Service Manual" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="06_install_and_use.html" class="btn btn-neutral float-right" title="2. Install and Use" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright MIT License - Copyright (c) 2023-2024 Data2Resilience Team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

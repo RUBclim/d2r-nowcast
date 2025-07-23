@@ -1,0 +1,280 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>1. Scientific Background &mdash; D2R Nowcasting Development v0.8.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
+
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=b5df399c"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="2. Limitations" href="07_limitations.html" />
+    <link rel="prev" title="3. Output Format" href="04_output_format.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html">
+            
+              <img src="../_static/d2r_logo_II.jpg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="01_overview.html">1. Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="01_overview.html#introduction">1.1. Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01_overview.html#what-is-the-problem-d2r-solves">1.2. What is the problem D2R solves?</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="06_install_and_use.html">2. Install and Use</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="06_install_and_use.html#setup">2.1. Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="06_install_and_use.html#structure">2.2. Structure</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Model</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="02_data_sources.html">1. Input Data</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="02_data_sources.html#data-describing-the-urban-form">1.1. Data Describing the Urban Form</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_data_sources.html#data-describing-the-weather-conditions">1.2. Data Describing the Weather Conditions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="02_data_sources.html#numerical-weather-predictions">1.2.1. Numerical Weather Predictions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="02_data_sources.html#in-situ-measurements">1.2.2. In-Situ Measurements</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="02_data_sources.html#file-organization">1.3. File organization</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="03_methods.html">2. Methods and Processes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="03_methods.html#processes">2.1. Processes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="03_methods.html#preprocessing">2.1.1. Preprocessing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="03_methods.html#alignment-of-weather-data">2.1.2. Alignment of Weather Data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="03_methods.html#geostatistical-interpolation-module">2.1.3. Geostatistical Interpolation Module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="03_methods.html#design-of-the-interpolation-module">2.1.3.1. Design of the Interpolation Module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="03_methods.html#workflow-description">2.1.3.2. Workflow Description</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="03_methods.html#solweig-processing">2.1.4. SOLWEIG Processing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="03_methods.html#mosaicing-tiles">2.1.5. Mosaicing Tiles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="03_methods.html#calculating-thermal-comfort">2.1.6. Calculating Thermal Comfort</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="03_methods.html#api">2.2. API</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="04_output_format.html">3. Output Format</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="04_output_format.html#filenames">3.1. Filenames</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04_output_format.html#spatial-coverage">3.2. Spatial Coverage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04_output_format.html#spatial-resolution">3.3. Spatial Resolution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="04_output_format.html#temporal-resolution-and-coverage">3.4. Temporal Resolution and Coverage</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Background</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">1. Scientific Background</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#thermal-comfort">1.1. Thermal Comfort</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#utci">1.2. UTCI</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="07_limitations.html">2. Limitations</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">D2R Nowcasting</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><span class="section-number">1. </span>Scientific Background</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/documentation/05_scientific_background.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="scientific-background">
+<span id="id1"></span><h1><span class="section-number">1. </span>Scientific Background<a class="headerlink" href="#scientific-background" title="Link to this heading"></a></h1>
+<p>This section covers the topic of scientific background, what is thermal comfort, what drives it and how it can be modeled.</p>
+<section id="thermal-comfort">
+<span id="id2"></span><h2><span class="section-number">1.1. </span>Thermal Comfort<a class="headerlink" href="#thermal-comfort" title="Link to this heading"></a></h2>
+<p>The ANSI/ASHRAE Standard <a class="footnote-reference brackets" href="#id20" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> defines Thermal Comfort as follows:</p>
+<blockquote class="epigraph">
+<div><p>“Thermal comfort is defined as the condition of mind that expresses satisfaction with the thermal environment and is assessed by subjective evaluation.”</p>
+</div></blockquote>
+<p>Oke et al. <a class="footnote-reference brackets" href="#id21" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a> complement this definition by emphasizing the individual, psychological, and cultural aspects of comfort assessment,
+which further complicate an objective valuation of this condition. This becomes even more difficult when considering the different
+conditions of spaces where people spend time, such as a constant indoor climate or changing microclimates outdoors. The complexity
+resulted in a variety of indices, which were comprehensively reviewed in the literature in general <a class="footnote-reference brackets" href="#id22" id="id5" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a> <a class="footnote-reference brackets" href="#id23" id="id6" role="doc-noteref"><span class="fn-bracket">[</span>4<span class="fn-bracket">]</span></a> <a class="footnote-reference brackets" href="#id24" id="id7" role="doc-noteref"><span class="fn-bracket">[</span>5<span class="fn-bracket">]</span></a> and for specific regions <a class="footnote-reference brackets" href="#id25" id="id8" role="doc-noteref"><span class="fn-bracket">[</span>6<span class="fn-bracket">]</span></a> <a class="footnote-reference brackets" href="#id26" id="id9" role="doc-noteref"><span class="fn-bracket">[</span>7<span class="fn-bracket">]</span></a> <a class="footnote-reference brackets" href="#id27" id="id10" role="doc-noteref"><span class="fn-bracket">[</span>8<span class="fn-bracket">]</span></a>.</p>
+<p>One of the most prominent indices is the Universal Thermal Climate Index (UTCI) <a class="footnote-reference brackets" href="#id28" id="id11" role="doc-noteref"><span class="fn-bracket">[</span>9<span class="fn-bracket">]</span></a>. It is driven by the four meteorological variables:
+Air Temperature, Relative Humidity, Wind Speed, and Radiation. Human behavior also plays a role in the sensation of thermal comfort in
+terms of clothing selection, health condition, activity, etc. These factors are considered and parameterized differently in different indices.</p>
+</section>
+<section id="utci">
+<span id="id12"></span><h2><span class="section-number">1.2. </span>UTCI<a class="headerlink" href="#utci" title="Link to this heading"></a></h2>
+<p>The UTCI is categorized as a rational model <a class="footnote-reference brackets" href="#id21" id="id13" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a> and considers the Fiala model for the biophysical processes, but uses an <em>outdoor reference</em> situation and a walking person <a class="footnote-reference brackets" href="#id21" id="id14" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a> <a class="footnote-reference brackets" href="#id28" id="id15" role="doc-noteref"><span class="fn-bracket">[</span>9<span class="fn-bracket">]</span></a> .</p>
+<p>“The UTCI is defined as the air temperature [..] of the reference condition causing the same model response as actual conditions.” <a class="footnote-reference brackets" href="#id28" id="id16" role="doc-noteref"><span class="fn-bracket">[</span>9<span class="fn-bracket">]</span></a></p>
+<p>So the approach of calculating UTCI is similar to that of PET, but the reference conditions and the underlying energy model differ. For UTCI, the reference conditions are <a class="footnote-reference brackets" href="#id21" id="id17" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a>:</p>
+<ul class="simple">
+<li><p>Outdoor reference where the individual is walking.</p></li>
+<li><p>Tair = TMRT (Air Temperature equals Mean Radiant Temperature).</p></li>
+<li><p>Wind Speed (V) is 0.5 m/s.</p></li>
+<li><p>Relative Humidity is 50% (capped at 20 hPa).</p></li>
+</ul>
+<p>UTCI comes with a classification of the temperature ranges into thermal (dis)comfort categories.
+See the table below for the different ranges:</p>
+<table class="docutils align-default" id="id19">
+<caption><span class="caption-number">Table 1.3 </span><span class="caption-text">UTCI classification into thermal stress levels (derived from <a class="footnote-reference brackets" href="#id28" id="id18" role="doc-noteref"><span class="fn-bracket">[</span>9<span class="fn-bracket">]</span></a>).</span><a class="headerlink" href="#id19" title="Link to this table"></a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>UTCI [°C]</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>[&lt; -40]</p></td>
+<td><p>Extreme Cold Stress</p></td>
+</tr>
+<tr class="row-even"><td><p>[-40 to -27]</p></td>
+<td><p>Very Strong Cold Stress</p></td>
+</tr>
+<tr class="row-odd"><td><p>[-27 to -13]</p></td>
+<td><p>Strong Cold Stress</p></td>
+</tr>
+<tr class="row-even"><td><p>[-13 to 0]</p></td>
+<td><p>Moderate Cold Stress</p></td>
+</tr>
+<tr class="row-odd"><td><p>[0 to 9]</p></td>
+<td><p>Slight Cold Stress</p></td>
+</tr>
+<tr class="row-even"><td><p>[9 to 26]</p></td>
+<td><p>No Thermal Stress</p></td>
+</tr>
+<tr class="row-odd"><td><p>[26 to 32]</p></td>
+<td><p>Slight Heat Stress</p></td>
+</tr>
+<tr class="row-even"><td><p>[32 to 38]</p></td>
+<td><p>Moderate Heat Stress</p></td>
+</tr>
+<tr class="row-odd"><td><p>[38 to 46]</p></td>
+<td><p>Strong Heat Stress</p></td>
+</tr>
+<tr class="row-even"><td><p>[ &gt; 46]</p></td>
+<td><p>Extreme Heat Stress</p></td>
+</tr>
+</tbody>
+</table>
+<hr class="docutils" />
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id20" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">1</a><span class="fn-bracket">]</span></span>
+<p>“ANSI/ASHRAE Standard 55-2010, Thermal Environmental Conditions for Human Occupancy”</p>
+</aside>
+<aside class="footnote brackets" id="id21" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></span>
+<span class="backrefs">(<a role="doc-backlink" href="#id4">1</a>,<a role="doc-backlink" href="#id13">2</a>,<a role="doc-backlink" href="#id14">3</a>,<a role="doc-backlink" href="#id17">4</a>)</span>
+<p>“T. R. Oke, G. Mills, A. Christen, and J. A. Voogt, Urban Climates. Cambridge: Cambridge University Press, 2017. <a class="reference external" href="https://doi.org/10.1017/9781139016476" rel="noreferrer" target="_blank">https://doi.org/10.1017/9781139016476</a>”</p>
+</aside>
+<aside class="footnote brackets" id="id22" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id5">3</a><span class="fn-bracket">]</span></span>
+<p>“I. Charalampopoulos, A comparative sensitivity analysis of human thermal comfort indices with generalized additive models. Theor Appl Climatol 137, 1605–1622, 2019. <a class="reference external" href="https://doi.org/10.1007/s00704-019-02900-1" rel="noreferrer" target="_blank">https://doi.org/10.1007/s00704-019-02900-1</a> “</p>
+</aside>
+<aside class="footnote brackets" id="id23" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id6">4</a><span class="fn-bracket">]</span></span>
+<p>“M. Migliari, R. Babut, C. De Gaulmyn, L. Chesne, O. Baverel, The Metamatrix of Thermal Comfort: A compendious graphical methodology for appropriate selection of outdoor thermal comfort indices and thermo-physiological models for human-biometeorology research and urban planning, Sustainable Cities and Society, Volume 81, 2022, <a class="reference external" href="https://doi.org/10.1016/j.scs.2022.103852" rel="noreferrer" target="_blank">https://doi.org/10.1016/j.scs.2022.103852</a>. “</p>
+</aside>
+<aside class="footnote brackets" id="id24" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id7">5</a><span class="fn-bracket">]</span></span>
+<p>“J. Shaeri, A Comparative Study of Outdoor and Indoor Thermal Comfort Indices, 2023, <a class="reference external" href="http://dx.doi.org/10.2139/ssrn.4489293" rel="noreferrer" target="_blank">http://dx.doi.org/10.2139/ssrn.4489293</a> (preprint)”</p>
+</aside>
+<aside class="footnote brackets" id="id25" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id8">6</a><span class="fn-bracket">]</span></span>
+<p>“F. Binarti, M. D. Koerniawan, S. Triyadi, S. Sesotya Utami, A. Matzarakis, A review of outdoor thermal comfort indices and neutral ranges for hot-humid regions, Urban Climate, Volume 31, 2020, <a class="reference external" href="https://doi.org/10.1016/j.uclim.2019.100531" rel="noreferrer" target="_blank">https://doi.org/10.1016/j.uclim.2019.100531</a>. “</p>
+</aside>
+<aside class="footnote brackets" id="id26" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id9">7</a><span class="fn-bracket">]</span></span>
+<p>“S. Patle, V.V. Ghuge, Evolution and performance analysis of thermal comfort indices for tropical and subtropical region: a comprehensive literature review. Int. J. Environ. Sci. Technol., 2024. <a class="reference external" href="https://doi.org/10.1007/s13762-024-05703-8" rel="noreferrer" target="_blank">https://doi.org/10.1007/s13762-024-05703-8</a>. “</p>
+</aside>
+<aside class="footnote brackets" id="id27" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id10">8</a><span class="fn-bracket">]</span></span>
+<p>“Z. Tao, X. Zhu, G. Xu, D. Zou, G. Li, A Comparative Analysis of Outdoor Thermal Comfort Indicators Applied in China and Other Countries. Sustainability, 2023, 15, <a class="reference external" href="https://doi.org/10.3390/su152216029" rel="noreferrer" target="_blank">https://doi.org/10.3390/su152216029</a>. “</p>
+</aside>
+<aside class="footnote brackets" id="id28" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span>9<span class="fn-bracket">]</span></span>
+<span class="backrefs">(<a role="doc-backlink" href="#id11">1</a>,<a role="doc-backlink" href="#id15">2</a>,<a role="doc-backlink" href="#id16">3</a>,<a role="doc-backlink" href="#id18">4</a>)</span>
+<p>“K. Blazejczyk, G. Jendritzky, P. Bröde, J. Baranowski, D. Fiala, G. Havenith,Y. Epstein, A. Psikuta, B. Kampmann, An introduction to the Universal Thermal Climate Index (UTCI), Geographia Polonica, 86, 2013, <a class="reference external" href="https://doi.org/10.7163/GPol.2013.1" rel="noreferrer" target="_blank">https://doi.org/10.7163/GPol.2013.1</a>. “</p>
+</aside>
+</aside>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="04_output_format.html" class="btn btn-neutral float-left" title="3. Output Format" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="07_limitations.html" class="btn btn-neutral float-right" title="2. Limitations" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright MIT License - Copyright (c) 2023-2024 Data2Resilience Team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

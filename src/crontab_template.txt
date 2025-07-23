@@ -1,0 +1,2 @@
+# periodic process
+0 * * * * <path-to-project>/d2r-nowcast/cronscript.sh 1> /dev/null 2> <path-to-logfile>/cron_demo.err

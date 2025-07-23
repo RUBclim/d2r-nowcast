@@ -1,0 +1,9 @@
+[project]
+name = "nowcasting_service_backend"
+version = "0.8.0"
+
+[project.metadata]
+keywords = ["thermal comfort", "climate adaptation", "urban environment"]
+title = "Data2Resilience"
+developer = "Urban Climate Lab Ruhr University Bochum"
+funding = "ICLEI Action Fund 2.0"

@@ -1,0 +1,28 @@
+{
+    "pca": true,
+    "predictors": [
+        "BU_DSM_mean_L1",
+        "BU_DSM_stdev_L1",
+        "BU_perc_L1",
+        "DTM_mean_L1",
+        "DTM_stdev_L1",
+        "VEG_perc_L1",
+        "VEG_mean_L1",
+        "COLD_perc_L1",
+        "ROAD_perc_L1",
+        "SVF_mean_L1",
+        "CLMT1_perc_L1",
+        "CLMT2_perc_L1",
+        "CLMT3_perc_L1",
+        "CLMT4_perc_L1",
+        "CLMT5_perc_L1",
+        "CLMT6_perc_L1",
+        "CLMT7_perc_L1",
+        "CLMT8_perc_L1",
+        "INDUSTR_perc_L1",
+        "BU_AREA_mean_L1",
+        "BU_AREA_stdev_L1",
+        "lat",
+        "lon"
+    ]
+}

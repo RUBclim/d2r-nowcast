@@ -1,0 +1,3 @@
+INPUT: {{data_path}}/{{dsm_folder}}/{{dsm_file}}
+OUTPUT_HEIGHT: {{output_path}}/{{solweig_process_folder}}/{{y_x}}/wall_height_{{y_x}}.tif
+OUTPUT_ASPECT: {{output_path}}/{{solweig_process_folder}}/{{y_x}}/wall_aspect_{{y_x}}.tif

@@ -1,0 +1,59 @@
+INPUT_DSM: {{data_path}}/{{dsm_folder}}/{{dsm_file}}
+INPUT_SVF: {{preprocess_data_path}}/{{y_x}}/svfs.zip
+INPUT_CDSM: {{data_path}}/{{cdsm_folder}}/{{cdsm_file}}
+INPUT_TDSM: None
+INPUT_HEIGHT: {{preprocess_data_path}}/{{y_x}}/wall_height_{{y_x}}.tif
+INPUT_ASPECT: {{preprocess_data_path}}/{{y_x}}/wall_aspect_{{y_x}}.tif
+TRANS_VEG: 3
+LEAF_START: 97
+LEAF_END: 300
+CONIFER_TREES: False
+INPUT_THEIGHT: 25.0
+INPUT_LC: {{lc_path}}
+USE_LC_BUILD: False
+INPUT_DEM: {{data_path}}/{{dtm_folder}}/{{dtm_file}}
+SAVE_BUILD: False
+INPUT_ANISO: "None"
+
+#Enivornmental parameters
+ALBEDO_WALLS: 0.2
+ALBEDO_GROUND: 0.15
+EMIS_WALLS: 0.9
+EMIS_GROUND: 0.95
+
+#Tmrt parameters
+ABS_S: 0.7
+ABS_L: 0.95
+POSTURE: 0
+
+#Meteorology
+INPUTMET: {{met_file_path}}
+ONLYGLOBAL: True
+UTC: 0
+
+#PET parameters
+AGE: 35
+ACTIVITY: 80.0
+CLO: 0.9
+WEIGHT: 75
+HEIGHT: 180
+SEX: 0
+SENSOR_HEIGHT: 10.0
+
+#Optional settings
+# POI = 'POI'
+# POI_FILE: "POIs.shp"
+# POI_FIELD: "id"
+POI_FILE: None
+POI_FIELD: None
+CYL: True
+
+#Output
+OUTPUT_DIR: {{output_path}}/{{solweig_process_folder}}/temp_tiles/{{y_x}}
+OUTPUT_TMRT: True
+OUTPUT_LUP: False
+OUTPUT_KUP: False
+OUTPUT_KDOWN: False
+OUTPUT_LDOWN: False
+OUTPUT_SH: False
+OUTPUT_TREEPLANTER: False

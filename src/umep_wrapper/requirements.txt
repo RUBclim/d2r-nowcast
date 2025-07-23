@@ -1,0 +1,10 @@
+scipy==1.15.3
+matplotlib==3.10.3
+packaging==25.0
+# gdal==3.7.3 # import directly in Dockerfile
+Jinja2==3.1.6
+psutil==7.0.0
+PyYAML==6.0.2
+pyarrow==20.0.0
+pandas==2.2.0
+pytest==8.3.5

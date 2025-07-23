@@ -1,0 +1,8 @@
+INPUT_DSM: {{data_path}}/{{dsm_folder}}/{{dsm_file}}
+INPUT_CDSM: {{data_path}}/{{cdsm_folder}}/{{cdsm_file}}
+INPUT_TDSM: None
+TRANS_VEG: 3
+INPUT_THEIGHT: 25.0
+ANISO: True
+OUTPUT_DIR: {{output_path}}/{{solweig_process_folder}}/{{y_x}}
+OUTPUT_FILE: {{output_path}}/{{solweig_process_folder}}/{{y_x}}/SkyViewFactor_{{y_x}}.tif
