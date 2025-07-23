@@ -10,7 +10,7 @@ The output data are visualized in the Data2Resilience [dashboard](https://dashbo
 
 This repository is structured as follows:
 
-- `doc/` - Project documentation. See the [README](./doc/README.md) for more details.
+- `docs/` - Project documentation. See the [README](./docs/README.md) for more details.
 
 - `src/` - Main processing scripts and pipeline setup.
   - `src/icon_d2/` - Downloads and prepares the ICON-D2 NWP from DWD.
@@ -22,7 +22,7 @@ This repository is structured as follows:
 
 ## Setup and Usage
 
-The backend functionality is delivered through a docker image that has to be build and run as a prediodic [`cron`](https://en.wikipedia.org/wiki/Cron) job. For step-by-step installation instructions, refer to the dedicated guide in the  [documentation](doc/source/documentation/06_install_and_use.rst).
+The backend functionality is delivered through a docker image that has to be build and run as a prediodic [`cron`](https://en.wikipedia.org/wiki/Cron) job. For step-by-step installation instructions, refer to the dedicated guide in the  [documentation](docs/source/documentation/06_install_and_use.rst).
 
 ### External Dependencies
 
