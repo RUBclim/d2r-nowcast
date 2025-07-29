@@ -80,7 +80,7 @@ Spatial Resolution
 ------------------
 
 D2R aims to map thermal comfort across the city at the street level. To achieve this, the resulting files have a very high
-spatial resolution of 3 square meters per pixel. The spatial resolution of gridded data refers to the dimension of the grid
+spatial resolution of 3 meters. The spatial resolution of gridded data refers to the dimension of the grid
 cell size representing the area covered on the ground. As such, it determines the level of detail that can be represented by
 the raster data: the finer the resolution of a raster, the smaller the cell size and, thus, the greater the detail. This
 fine resolution level allows for a very detailed representation of the urban features, such as buildings and trees, that
